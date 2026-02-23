@@ -1,0 +1,30 @@
+{
+  "extraKnownMarketplaces": {
+    "hoonse-claude-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "iamhoonse-dev/hoonse-claude-plugins"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "claude-logger@hoonse-claude-plugins": true,
+    "technical-writing@hoonse-claude-plugins": true,
+    "git-workflow@hoonse-claude-plugins": true,
+    "github-workflow@hoonse-claude-plugins": true,
+    "project-analyzer@hoonse-claude-plugins": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/scripts/check-hoonse-plugins-setup.sh",
+            "statusMessage": "셋업 상태 확인 중..."
+          }
+        ]
+      }
+    ]
+  }
+}
